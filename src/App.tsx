@@ -24,7 +24,7 @@ const routes = [
 ]
 
 function isBaselineExperiment() {
-  return new URLSearchParams(window.location.search).get('variant') === 'baseline'
+  return true
 }
 
 function getPath() {
