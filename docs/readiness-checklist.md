@@ -25,6 +25,9 @@
 | Сравнительная таблица | выполнено | `reports/performance-comparison.md` |
 | Скриншоты приложения | выполнено | `docs/screenshots/` |
 | Скриншот успешного GitHub Actions | выполнено | `docs/screenshots/github-actions-success.jpg` |
+| Скриншот строгого Performance CI | выполнено | `docs/screenshots/github-actions-performance-ci-strict.jpg` |
+| Скриншот полного Performance Experiment | выполнено | `docs/screenshots/github-actions-performance-experiment.jpg` |
+| Ссылки на успешные GitHub Actions runs | выполнено | `docs/actions-evidence.md` |
 | HTML-отчеты Lighthouse для приложений | выполнено | `docs/lighthouse-html/` |
 | Таблица “проблема → метрика → оптимизация → результат” | выполнено | `docs/optimization-map.md` |
 | Отдельные ветки baseline/optimized | выполнено | `baseline-version`, `optimized-version` |
@@ -37,6 +40,7 @@
 - описание приложения из `docs/chapter-3-materials.md`;
 - план эксперимента из `docs/experiment-plan.md`;
 - безопасные формулировки из `docs/dissertation-wording.md`;
+- ссылки на GitHub Actions из `docs/actions-evidence.md`;
 - таблицы измерений из `reports/*.md`;
 - скриншоты из `docs/screenshots/`;
 - конфигурации из `lighthouserc.cjs`, `lighthouserc.baseline.cjs`, `budgets.json`;

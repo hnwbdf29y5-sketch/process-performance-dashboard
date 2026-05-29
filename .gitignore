@@ -15,6 +15,7 @@ dist-ssr
 reports/lighthouse
 reports/baseline-lighthouse
 reports/strict-lighthouse
+artifacts/
 
 # Editor directories and files
 .vscode/*

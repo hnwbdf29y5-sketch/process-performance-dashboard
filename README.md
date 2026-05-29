@@ -77,6 +77,7 @@ npm run perf:experiment
 - `docs/chapter-3-materials.md` — готовые материалы для главы 3;
 - `docs/optimization-map.md` — таблица “проблема → метрика → оптимизация → результат”;
 - `docs/dissertation-wording.md` — безопасные формулировки для текста диссертации и защиты;
+- `docs/actions-evidence.md` — ссылки на успешные GitHub Actions runs и локальный ZIP artifact;
 - `docs/screenshots/` — скриншоты русскоязычного интерфейса для приложений;
 - `docs/lighthouse-html/` — HTML-отчеты Lighthouse для приложений.
 
