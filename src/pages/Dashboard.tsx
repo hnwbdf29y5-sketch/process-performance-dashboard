@@ -15,17 +15,17 @@ function Dashboard() {
       <section className="panel chart-panel">
         <div className="panel-heading">
           <div>
-            <p className="eyebrow">Controlled parameters</p>
-            <h2>Process trend, current shift</h2>
+            <p className="eyebrow">Контролируемые параметры</p>
+            <h2>Динамика процесса за текущую смену</h2>
           </div>
-          <span className="status-pill good"><CheckCircle2 size={16} aria-hidden="true" /> stable</span>
+          <span className="status-pill good"><CheckCircle2 size={16} aria-hidden="true" /> стабильно</span>
         </div>
         <LineChart
           data={trendData}
           series={[
-            { key: 'pressure', label: 'Pressure', color: '#2563eb' },
-            { key: 'temperature', label: 'Temperature', color: '#dc2626' },
-            { key: 'vibration', label: 'Vibration', color: '#059669' },
+            { key: 'pressure', label: 'Давление', color: '#2563eb' },
+            { key: 'temperature', label: 'Температура', color: '#dc2626' },
+            { key: 'vibration', label: 'Вибрация', color: '#059669' },
           ]}
         />
       </section>
@@ -33,7 +33,7 @@ function Dashboard() {
       <div className="two-column">
         <section className="panel">
           <div className="panel-heading compact">
-            <h2>Latest events</h2>
+            <h2>Последние события</h2>
             <AlertTriangle size={18} aria-hidden="true" />
           </div>
           <div className="event-list compact-list">
@@ -52,14 +52,14 @@ function Dashboard() {
 
         <section className="panel">
           <div className="panel-heading compact">
-            <h2>Control loop</h2>
+            <h2>Контур контроля</h2>
             <Gauge size={18} aria-hidden="true" />
           </div>
           <ol className="process-steps">
-            <li>Build frontend artifact</li>
-            <li>Run Lighthouse CI for target routes</li>
-            <li>Compare metrics with performance budget</li>
-            <li>Generate report and optimization signals</li>
+            <li>Сборка frontend-артефакта</li>
+            <li>Запуск Lighthouse CI для целевых маршрутов</li>
+            <li>Сравнение метрик с performance budget</li>
+            <li>Формирование отчета и сигналов оптимизации</li>
           </ol>
         </section>
       </div>

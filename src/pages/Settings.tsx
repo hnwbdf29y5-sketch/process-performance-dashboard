@@ -7,9 +7,9 @@ function Settings() {
         <div className="panel-heading">
           <div>
             <p className="eyebrow">Performance budget</p>
-            <h2>Automated control thresholds</h2>
+            <h2>Пороговые значения автоматизированного контроля</h2>
           </div>
-          <span className="status-pill neutral">warning mode</span>
+          <span className="status-pill neutral">режим предупреждений</span>
         </div>
         <div className="budget-list">
           {performanceBudget.map((item) => (

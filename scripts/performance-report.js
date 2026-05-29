@@ -77,11 +77,11 @@ function summarize(reports) {
 
 function toMarkdown(rows) {
   const header = [
-    '# Performance Summary',
+    '# Сводка измерений производительности',
     '',
-    'Median values are calculated from Lighthouse CI JSON reports.',
+    'Медианные значения рассчитаны по JSON-отчетам Lighthouse CI.',
     '',
-    '| Route | Runs | Score | FCP, s | LCP, s | TBT, ms | CLS | Speed Index, s | Transfer, KB | Requests |',
+    '| Маршрут | Прогонов | Оценка | FCP, с | LCP, с | TBT, мс | CLS | Speed Index, с | Передача, KB | Запросов |',
     '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
   ]
   const body = rows.map((row) => (
@@ -95,4 +95,4 @@ const summary = summarize(reports)
 await mkdir(outDir, { recursive: true })
 await writeFile(jsonPath, `${JSON.stringify(summary, null, 2)}\n`)
 await writeFile(summaryPath, toMarkdown(summary))
-console.log(`Wrote ${summaryPath}`)
+console.log(`Записан файл ${summaryPath}`)

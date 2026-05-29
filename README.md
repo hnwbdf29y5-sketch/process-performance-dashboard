@@ -1,12 +1,23 @@
-# Process Performance Dashboard
+# Панель контроля производительности веб-приложения
 
-Experimental frontend application for the master's thesis topic:
+Экспериментальное frontend-приложение для магистерской диссертации по теме:
 
-> Web application performance optimization: research of modern methods and tools.
+> Оптимизация производительности веб-приложений: исследование современных методов и инструментов.
 
-The project represents a process-monitoring dashboard and includes an automated Lighthouse CI pipeline, a performance budget, and report generation scripts.
+Проект представляет собой русскоязычный веб-интерфейс мониторинга параметров технологического процесса и демонстрирует автоматизированный контур контроля производительности клиентской части.
 
-## Stack
+## Назначение
+
+Приложение используется как инженерный артефакт для экспериментальной проверки методики:
+
+1. сборка frontend-приложения;
+2. запуск тестового preview-сервера;
+3. автоматический аудит маршрутов через Lighthouse CI;
+4. сравнение метрик с performance budget;
+5. формирование сводных Markdown/JSON-отчетов;
+6. сравнение исходной и оптимизированной версий.
+
+## Стек
 
 - React
 - TypeScript
@@ -14,26 +25,39 @@ The project represents a process-monitoring dashboard and includes an automated 
 - Lighthouse CI
 - GitHub Actions
 
-## Routes
+## Маршруты
 
-- `/dashboard`
-- `/events`
-- `/reports`
-- `/settings`
-- `/details/line-a`
+- `/dashboard` — панель мониторинга;
+- `/events` — журнал событий;
+- `/reports` — отчеты по производительности;
+- `/settings` — пороговые значения performance budget;
+- `/details/line-a` — карточка контролируемого объекта.
 
-## Commands
+## Команды
 
 ```bash
 npm install
 npm run dev
 npm run build
+npm run lint
 npm run lhci
 npm run perf:report
 npm run perf:compare
 npm run perf:experiment
 ```
 
-Use `npm run perf:ci` to build the app, run Lighthouse CI, and generate `reports/performance-summary.md`.
+`npm run perf:ci` собирает приложение, запускает Lighthouse CI и формирует `reports/performance-summary.md`.
 
-Use `npm run perf:experiment` to measure the controlled baseline variant and the optimized variant.
+`npm run perf:experiment` измеряет контролируемую исходную версию (`?variant=baseline`), оптимизированную версию и формирует сравнение в `reports/performance-comparison.md`.
+
+## Артефакты для диссертации
+
+- `budgets.json` — performance budget;
+- `lighthouserc.cjs` — конфигурация Lighthouse CI для оптимизированной версии;
+- `lighthouserc.baseline.cjs` — конфигурация Lighthouse CI для исходной версии;
+- `reports/baseline-summary.md` — исходные показатели;
+- `reports/performance-summary.md` — показатели после оптимизации;
+- `reports/performance-comparison.md` — таблица сравнения до/после;
+- `docs/experiment-plan.md` — методика эксперимента;
+- `docs/chapter-3-materials.md` — готовые материалы для главы 3;
+- `docs/screenshots/` — скриншоты русскоязычного интерфейса для приложений.

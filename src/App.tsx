@@ -16,11 +16,11 @@ const SettingsPage = lazy(() => import('./pages/Settings'))
 const Details = lazy(() => import('./pages/Details'))
 
 const routes = [
-  { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { path: '/events', label: 'Events', icon: Bell },
-  { path: '/reports', label: 'Reports', icon: FileText },
-  { path: '/settings', label: 'Settings', icon: SlidersHorizontal },
-  { path: '/details/line-a', label: 'Details', icon: Gauge },
+  { path: '/dashboard', label: 'Панель', title: 'Панель мониторинга', icon: LayoutDashboard },
+  { path: '/events', label: 'События', title: 'Журнал событий', icon: Bell },
+  { path: '/reports', label: 'Отчеты', title: 'Отчеты по производительности', icon: FileText },
+  { path: '/settings', label: 'Пороги', title: 'Пороговые значения', icon: SlidersHorizontal },
+  { path: '/details/line-a', label: 'Объект', title: 'Карточка объекта', icon: Gauge },
 ]
 
 function isBaselineExperiment() {
@@ -45,14 +45,14 @@ function BaselineCost() {
     }
 
     if (checksumRef.current) {
-      checksumRef.current.textContent = `main-thread checksum ${Math.round(nextChecksum)}`
+      checksumRef.current.textContent = `контрольная сумма main thread: ${Math.round(nextChecksum)}`
     }
   }, [])
 
   return (
-    <section className="baseline-cost" aria-label="Baseline experimental load">
-      <strong>Baseline variant</strong>
-      <span ref={checksumRef}>main-thread checksum pending</span>
+    <section className="baseline-cost" aria-label="Исходная экспериментальная нагрузка">
+      <strong>Исходная версия для эксперимента</strong>
+      <span ref={checksumRef}>контрольная сумма main thread рассчитывается</span>
       <div>
         {rows.map((row) => (
           <i key={row} style={{ width: `${20 + (row % 18)}px` }} />
@@ -73,8 +73,8 @@ function App() {
   }, [])
 
   const title = useMemo(() => {
-    if (path.startsWith('/details')) return 'Object details'
-    return routes.find((route) => route.path === path)?.label ?? 'Dashboard'
+    if (path.startsWith('/details')) return 'Карточка объекта'
+    return routes.find((route) => route.path === path)?.title ?? 'Панель мониторинга'
   }, [path])
 
   const navigate = (nextPath: string) => {
@@ -84,7 +84,7 @@ function App() {
 
   return (
     <div className="app-shell">
-      <aside className="sidebar" aria-label="Primary navigation">
+      <aside className="sidebar" aria-label="Основная навигация">
         <a className="brand" href="/dashboard" onClick={(event) => {
           event.preventDefault()
           navigate('/dashboard')
@@ -92,7 +92,7 @@ function App() {
           <span className="brand-mark"><Activity size={20} aria-hidden="true" /></span>
           <span>
             <strong>ProcessControl</strong>
-            <small>performance lab</small>
+            <small>лаборатория метрик</small>
           </span>
         </a>
         <nav className="nav-list">
@@ -121,16 +121,16 @@ function App() {
       <main className="workspace">
         <header className="topbar">
           <div>
-            <p className="eyebrow">Automated performance control</p>
+            <p className="eyebrow">Автоматизированный контроль производительности</p>
             <h1>{title}</h1>
           </div>
-          <div className="topbar-actions" aria-label="Current control state">
-            <span className="status-pill good">CI budget: pass</span>
-            <span className="status-pill neutral"><BarChart3 size={16} aria-hidden="true" /> 5 routes</span>
+          <div className="topbar-actions" aria-label="Текущее состояние контроля">
+            <span className="status-pill good">Budget CI: выполнен</span>
+            <span className="status-pill neutral"><BarChart3 size={16} aria-hidden="true" /> 5 маршрутов</span>
           </div>
         </header>
 
-        <Suspense fallback={<div className="loading-panel">Loading measured route...</div>}>
+        <Suspense fallback={<div className="loading-panel">Загрузка измеряемого маршрута...</div>}>
           {baselineExperiment && <BaselineCost />}
           {path === '/events' && <Events />}
           {path === '/reports' && <Reports />}

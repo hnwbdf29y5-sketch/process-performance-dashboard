@@ -7,9 +7,9 @@ function Details() {
     <section className="page-stack">
       <section className="panel object-header">
         <div>
-          <p className="eyebrow">Controlled object</p>
-          <h2>Line A / Reactor R-12</h2>
-          <p className="muted">Continuous monitoring of pressure, temperature, vibration and control-response stability.</p>
+          <p className="eyebrow">Контролируемый объект</p>
+          <h2>Линия A / реактор R-12</h2>
+          <p className="muted">Непрерывный мониторинг давления, температуры, вибрации и стабильности реакции системы управления.</p>
         </div>
         <div className="object-kpis">
           <span><Thermometer size={16} aria-hidden="true" /> 164 C</span>
@@ -20,13 +20,13 @@ function Details() {
 
       <section className="panel chart-panel">
         <div className="panel-heading compact">
-          <h2>Object signal profile</h2>
+          <h2>Профиль сигналов объекта</h2>
         </div>
         <LineChart
           data={trendData}
           series={[
-            { key: 'pressure', label: 'Pressure', color: '#2563eb' },
-            { key: 'temperature', label: 'Temperature', color: '#dc2626' },
+            { key: 'pressure', label: 'Давление', color: '#2563eb' },
+            { key: 'temperature', label: 'Температура', color: '#dc2626' },
           ]}
         />
       </section>

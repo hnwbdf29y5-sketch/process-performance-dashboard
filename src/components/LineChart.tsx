@@ -23,7 +23,7 @@ function points(data: TrendPoint[], key: SeriesKey) {
 export function LineChart({ data, series }: Props) {
   return (
     <div className="chart-wrap">
-      <svg viewBox="0 0 720 300" role="img" aria-label="Process parameter trends">
+      <svg viewBox="0 0 720 300" role="img" aria-label="График параметров технологического процесса">
         <g className="chart-grid">
           {[0, 1, 2, 3].map((line) => (
             <line key={line} x1="0" x2="720" y1={line * 70 + 20} y2={line * 70 + 20} />

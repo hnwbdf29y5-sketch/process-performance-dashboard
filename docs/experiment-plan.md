@@ -1,37 +1,41 @@
-# Experiment Plan
+# План экспериментального исследования
 
-The prototype verifies an automated performance-control method for a React/Vite frontend application.
+Прототип используется для проверки автоматизированной методики оценки и оптимизации производительности клиентской части веб-приложения.
 
-Measured routes:
+## Измеряемые маршруты
 
-- `/dashboard`
-- `/events`
-- `/reports`
-- `/settings`
-- `/details/line-a`
+- `/dashboard` — панель мониторинга технологического процесса;
+- `/events` — журнал событий;
+- `/reports` — отчеты по результатам измерений;
+- `/settings` — пороговые значения performance budget;
+- `/details/line-a` — карточка контролируемого объекта.
 
-Pipeline:
+## Последовательность эксперимента
 
-1. Build the frontend artifact.
-2. Start the Vite preview server.
-3. Run Lighthouse CI five times for every route.
-4. Export HTML and JSON Lighthouse reports.
-5. Calculate median values for the selected metrics.
-6. Compare the measured values with the performance budget.
-7. Generate a Markdown and JSON summary for the thesis tables.
+1. Выполнить production-сборку frontend-приложения.
+2. Запустить Vite preview server.
+3. Выполнить Lighthouse CI для каждого маршрута.
+4. Сделать 5 прогонов для каждого маршрута.
+5. Получить HTML- и JSON-отчеты Lighthouse.
+6. Рассчитать медианные значения метрик.
+7. Сравнить значения с performance budget.
+8. Сформировать Markdown/JSON-сводку для таблиц диссертации.
+9. Сравнить исходную и оптимизированную версии.
 
-Measured metrics:
+## Измеряемые метрики
 
-- Lighthouse Performance Score
-- FCP
-- LCP
-- TBT
-- CLS
-- Speed Index
-- total transfer size
-- request count
+- Lighthouse Performance Score;
+- FCP;
+- LCP;
+- TBT;
+- CLS;
+- Speed Index;
+- общий объем переданных ресурсов;
+- количество сетевых запросов.
 
-Experimental variants:
+## Экспериментальные варианты
 
-- baseline: URLs include `?variant=baseline`, which activates controlled main-thread load and extra DOM work to represent an unoptimized initial version;
-- optimized: regular route URLs without the query parameter.
+- исходная версия: URL содержит `?variant=baseline`, что включает контролируемую нагрузку на основной поток и дополнительную DOM-нагрузку;
+- оптимизированная версия: обычные URL без query-параметра.
+
+Такой подход позволяет воспроизводимо показать проблему исходной версии и эффект оптимизации без ручной подмены проекта.

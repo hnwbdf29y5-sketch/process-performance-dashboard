@@ -16,11 +16,18 @@ export type TrendPoint = {
   vibration: number
 }
 
+export type ProcessEvent = {
+  time: string
+  source: string
+  type: Status
+  message: string
+}
+
 export const processMetrics: ProcessMetric[] = [
-  { label: 'Line pressure', value: 7.8, unit: 'MPa', limit: '6.8-8.4 MPa', status: 'normal', delta: '+0.3' },
-  { label: 'Reactor temperature', value: 164, unit: 'C', limit: '150-170 C', status: 'warning', delta: '+4.1' },
-  { label: 'Pump vibration', value: 3.2, unit: 'mm/s', limit: '< 4.5 mm/s', status: 'normal', delta: '-0.4' },
-  { label: 'Energy load', value: 82, unit: '%', limit: '< 88%', status: 'normal', delta: '+1.8' },
+  { label: 'Давление линии', value: 7.8, unit: 'МПа', limit: '6.8-8.4 МПа', status: 'normal', delta: '+0.3' },
+  { label: 'Температура реактора', value: 164, unit: 'C', limit: '150-170 C', status: 'warning', delta: '+4.1' },
+  { label: 'Вибрация насоса', value: 3.2, unit: 'мм/с', limit: '< 4.5 мм/с', status: 'normal', delta: '-0.4' },
+  { label: 'Энергетическая нагрузка', value: 82, unit: '%', limit: '< 88%', status: 'normal', delta: '+1.8' },
 ]
 
 export const trendData: TrendPoint[] = [
@@ -33,13 +40,13 @@ export const trendData: TrendPoint[] = [
   { label: '14:00', pressure: 75, temperature: 76, vibration: 34 },
 ]
 
-export const events = [
-  { time: '14:12', source: 'Reactor R-12', type: 'warning', message: 'Temperature reached warning boundary' },
-  { time: '13:47', source: 'Pump P-04', type: 'normal', message: 'Vibration returned to target range' },
-  { time: '13:10', source: 'Line A', type: 'normal', message: 'Pressure correction completed' },
-  { time: '12:33', source: 'Filter F-02', type: 'critical', message: 'Short pressure drop detected' },
-  { time: '11:58', source: 'Energy node E-1', type: 'normal', message: 'Load balancing cycle finished' },
-  { time: '11:20', source: 'Line B', type: 'warning', message: 'Delayed response from valve controller' },
+export const events: ProcessEvent[] = [
+  { time: '14:12', source: 'Реактор R-12', type: 'warning', message: 'Температура достигла предупредительной границы' },
+  { time: '13:47', source: 'Насос P-04', type: 'normal', message: 'Вибрация вернулась в допустимый диапазон' },
+  { time: '13:10', source: 'Линия A', type: 'normal', message: 'Коррекция давления завершена' },
+  { time: '12:33', source: 'Фильтр F-02', type: 'critical', message: 'Зафиксировано кратковременное падение давления' },
+  { time: '11:58', source: 'Энергоузел E-1', type: 'normal', message: 'Цикл балансировки нагрузки завершен' },
+  { time: '11:20', source: 'Линия B', type: 'warning', message: 'Замедленный ответ контроллера клапана' },
 ]
 
 export const reports = [
@@ -51,10 +58,10 @@ export const reports = [
 ]
 
 export const performanceBudget = [
-  { metric: 'LCP', target: '<= 2.5 s', reason: 'Core Web Vitals loading criterion' },
-  { metric: 'TBT', target: '<= 200 ms', reason: 'Main-thread blocking control' },
-  { metric: 'CLS', target: '<= 0.10', reason: 'Visual stability control' },
-  { metric: 'Performance score', target: '>= 90', reason: 'Integrated Lighthouse criterion' },
-  { metric: 'JavaScript transfer', target: '<= 300 KB', reason: 'Local bundle-size budget' },
-  { metric: 'Requests', target: '<= 50', reason: 'Network complexity budget' },
+  { metric: 'LCP', target: '<= 2.5 с', reason: 'Порог Core Web Vitals для загрузки основного контента' },
+  { metric: 'TBT', target: '<= 200 мс', reason: 'Ограничение блокировки основного потока' },
+  { metric: 'CLS', target: '<= 0.10', reason: 'Контроль визуальной стабильности интерфейса' },
+  { metric: 'Lighthouse Performance', target: '>= 90', reason: 'Интегральная оценка производительности' },
+  { metric: 'Передача JavaScript', target: '<= 300 KB', reason: 'Локальный budget размера клиентского JavaScript' },
+  { metric: 'Количество запросов', target: '<= 50', reason: 'Ограничение сетевой сложности загрузки' },
 ]

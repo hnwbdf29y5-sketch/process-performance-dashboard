@@ -1,16 +1,22 @@
 import { Filter, Search } from 'lucide-react'
 import { events } from '../data/processData'
 
+const statusLabels = {
+  normal: 'норма',
+  warning: 'внимание',
+  critical: 'критично',
+} as const
+
 function Events() {
   return (
     <section className="page-stack">
       <div className="toolbar">
         <label className="search-box">
           <Search size={16} aria-hidden="true" />
-          <span className="sr-only">Search events</span>
-          <input placeholder="Search event log" />
+          <span className="sr-only">Поиск событий</span>
+          <input placeholder="Поиск по журналу событий" />
         </label>
-        <button className="icon-button" type="button" aria-label="Filter events">
+        <button className="icon-button" type="button" aria-label="Фильтр событий">
           <Filter size={18} aria-hidden="true" />
         </button>
       </div>
@@ -19,10 +25,10 @@ function Events() {
           <table>
             <thead>
               <tr>
-                <th>Time</th>
-                <th>Object</th>
-                <th>Status</th>
-                <th>Message</th>
+                <th>Время</th>
+                <th>Объект</th>
+                <th>Статус</th>
+                <th>Сообщение</th>
               </tr>
             </thead>
             <tbody>
@@ -30,7 +36,7 @@ function Events() {
                 <tr key={`${event.time}-${event.source}`}>
                   <td>{event.time}</td>
                   <td>{event.source}</td>
-                  <td><span className={`state-label ${event.type}`}>{event.type}</span></td>
+                  <td><span className={`state-label ${event.type}`}>{statusLabels[event.type]}</span></td>
                   <td>{event.message}</td>
                 </tr>
               ))}

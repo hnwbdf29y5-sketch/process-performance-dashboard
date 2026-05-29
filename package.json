@@ -2,7 +2,7 @@
   "name": "process-performance-dashboard",
   "private": true,
   "version": "1.0.0",
-  "description": "Frontend prototype for automated web performance control and optimization research.",
+  "description": "Русскоязычный frontend-прототип для автоматизированного контроля производительности веб-приложения.",
   "type": "module",
   "scripts": {
     "dev": "vite",

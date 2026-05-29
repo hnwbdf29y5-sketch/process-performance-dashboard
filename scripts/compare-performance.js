@@ -38,9 +38,9 @@ const rows = baseline.map((before) => {
 })
 
 const markdown = [
-  '# Performance Comparison',
+  '# Сравнение показателей до и после оптимизации',
   '',
-  '| Route | Score before | Score after | Score delta | TBT before, ms | TBT after, ms | TBT improvement | LCP before, s | LCP after, s | LCP change | Transfer before, KB | Transfer after, KB |',
+  '| Маршрут | Оценка до | Оценка после | Изменение оценки | TBT до, мс | TBT после, мс | Улучшение TBT | LCP до, с | LCP после, с | Изменение LCP | Передача до, KB | Передача после, KB |',
   '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
   ...rows.map((row) => (
     `| ${row.route} | ${row.scoreBefore} | ${row.scoreAfter} | ${row.scoreDelta} | ${row.tbtBefore} | ${row.tbtAfter} | ${row.tbtImprovement} | ${row.lcpBefore} | ${row.lcpAfter} | ${row.lcpImprovement} | ${row.transferBefore} | ${row.transferAfter} |`
@@ -49,4 +49,4 @@ const markdown = [
 ].join('\n')
 
 await writeFile(outPath, markdown)
-console.log(`Wrote ${outPath}`)
+console.log(`Записан файл ${outPath}`)

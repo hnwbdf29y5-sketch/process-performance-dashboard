@@ -4,11 +4,11 @@
     "runs": 5,
     "score": 90,
     "fcp": 0.37,
-    "lcp": 0.37,
+    "lcp": 0.38,
     "tbt": 270,
     "cls": 0,
     "si": 0.37,
-    "transferKb": 70,
+    "transferKb": 71,
     "requests": 7
   },
   {
@@ -20,7 +20,7 @@
     "tbt": 270,
     "cls": 0,
     "si": 0.37,
-    "transferKb": 70,
+    "transferKb": 71,
     "requests": 7
   },
   {
@@ -32,7 +32,7 @@
     "tbt": 290,
     "cls": 0,
     "si": 0.35,
-    "transferKb": 68,
+    "transferKb": 69,
     "requests": 6
   },
   {
@@ -41,10 +41,10 @@
     "score": 88,
     "fcp": 0.35,
     "lcp": 0.37,
-    "tbt": 290,
+    "tbt": 289,
     "cls": 0,
     "si": 0.35,
-    "transferKb": 69,
+    "transferKb": 70,
     "requests": 6
   },
   {

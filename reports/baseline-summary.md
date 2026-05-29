@@ -1,11 +1,11 @@
-# Performance Summary
+# Сводка измерений производительности
 
-Median values are calculated from Lighthouse CI JSON reports.
+Медианные значения рассчитаны по JSON-отчетам Lighthouse CI.
 
-| Route | Runs | Score | FCP, s | LCP, s | TBT, ms | CLS | Speed Index, s | Transfer, KB | Requests |
+| Маршрут | Прогонов | Оценка | FCP, с | LCP, с | TBT, мс | CLS | Speed Index, с | Передача, KB | Запросов |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| /dashboard | 5 | 90 | 0.37 | 0.37 | 270 | 0 | 0.37 | 70 | 7 |
-| /details/line-a | 5 | 90 | 0.37 | 0.37 | 270 | 0 | 0.37 | 70 | 7 |
-| /events | 5 | 88 | 0.35 | 0.37 | 290 | 0 | 0.35 | 68 | 6 |
-| /reports | 5 | 88 | 0.35 | 0.37 | 290 | 0 | 0.35 | 69 | 6 |
+| /dashboard | 5 | 90 | 0.37 | 0.38 | 270 | 0 | 0.37 | 71 | 7 |
+| /details/line-a | 5 | 90 | 0.37 | 0.37 | 270 | 0 | 0.37 | 71 | 7 |
+| /events | 5 | 88 | 0.35 | 0.37 | 290 | 0 | 0.35 | 69 | 6 |
+| /reports | 5 | 88 | 0.35 | 0.37 | 289 | 0 | 0.35 | 70 | 6 |
 | /settings | 5 | 88 | 0.35 | 0.37 | 290 | 0 | 0.35 | 69 | 6 |
