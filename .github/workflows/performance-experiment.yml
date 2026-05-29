@@ -1,0 +1,32 @@
+name: Performance Experiment
+
+on:
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run full performance experiment
+        run: npm run perf:experiment
+
+      - name: Upload experiment artifacts
+        uses: actions/upload-artifact@v5
+        with:
+          name: performance-experiment-reports
+          path: reports/

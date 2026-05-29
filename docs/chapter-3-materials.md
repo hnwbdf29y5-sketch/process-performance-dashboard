@@ -21,7 +21,7 @@
 
 Автоматизированный конвейер реализован на основе Lighthouse CI. Конвейер выполняет сборку приложения, запускает preview-сервер, выполняет измерения для заданных маршрутов, сохраняет HTML/JSON-отчеты и формирует сводные таблицы с медианными значениями метрик.
 
-В GitHub Actions используется строгая конфигурация `lighthouserc.strict.cjs`: если оптимизированная версия нарушает заданные пороги по Lighthouse Performance, LCP, TBT или CLS, проверка завершается ошибкой. Для полного эксперимента до/после применяется `npm run perf:experiment`, где baseline-измерения сохраняются как исследовательские данные, а не как обязательное условие прохождения CI.
+В GitHub Actions используется два режима. Workflow `Performance CI` применяет строгую конфигурацию `lighthouserc.strict.cjs`: если оптимизированная версия нарушает заданные пороги по Lighthouse Performance, LCP, TBT или CLS, проверка завершается ошибкой. Workflow `Performance Experiment` запускается вручную и выполняет полный цикл `npm run perf:experiment`, где baseline-измерения сохраняются как исследовательские данные, а затем формируется сравнение исходной и оптимизированной версий.
 
 Компоненты конвейера:
 
@@ -35,9 +35,12 @@
 | `scripts/performance-report.js` | расчет медианных значений по JSON-отчетам |
 | `scripts/compare-performance.js` | формирование таблицы сравнения до/после |
 | `scripts/budget-check.js` | проверка фактических значений по `budgets.json` |
-| `.github/workflows/performance.yml` | запуск проверки в GitHub Actions |
+| `.github/workflows/performance.yml` | строгий регулярный контроль в GitHub Actions |
+| `.github/workflows/performance-experiment.yml` | ручной запуск полного эксперимента до/после |
 
 В CI используются команды `npm run perf:report:strict` и `npm run budget:check:strict`, поэтому сводка и budget-отчет строятся именно по отчетам строгого запуска из `reports/strict-lighthouse` и сохраняются отдельно как `reports/strict-summary.md` и `reports/strict-budget-check.md`. Основные отчеты `reports/performance-summary.md` и `reports/performance-comparison.md` остаются результатами полного эксперимента до/после.
+
+Такое разделение выбрано для экономии CI-минут: регулярная проверка контролирует качество текущей оптимизированной версии, а полный эксперимент запускается вручную, когда нужно обновить доказательные материалы для диссертации.
 
 ## 3.3 Исходная оценка производительности
 

@@ -17,6 +17,11 @@
 5. формирование сводных Markdown/JSON-отчетов;
 6. сравнение исходной и оптимизированной версий.
 
+В репозитории используется два GitHub Actions workflow:
+
+- `Performance CI` — регулярный строгий контроль оптимизированной версии при push/PR;
+- `Performance Experiment` — ручной запуск полного эксперимента baseline/optimized/comparison через `workflow_dispatch`.
+
 ## Стек
 
 - React
@@ -74,6 +79,12 @@ npm run perf:experiment
 - `docs/dissertation-wording.md` — безопасные формулировки для текста диссертации и защиты;
 - `docs/screenshots/` — скриншоты русскоязычного интерфейса для приложений;
 - `docs/lighthouse-html/` — HTML-отчеты Lighthouse для приложений.
+
+## GitHub Actions
+
+`Performance CI` запускается автоматически при push в `main` и pull request. Он проверяет текущую оптимизированную версию через `npm run perf:ci`; нарушение ключевых порогов завершает job ошибкой.
+
+`Performance Experiment` запускается вручную из вкладки Actions. Он выполняет полный цикл `npm run perf:experiment`: baseline-измерения, optimized-измерения, budget-check и формирование сравнения до/после. Этот workflow нужен как доказательный артефакт для диссертации, но не запускается на каждый коммит, чтобы не расходовать CI-минуты без необходимости.
 
 ## Как интерпретировать результаты
 

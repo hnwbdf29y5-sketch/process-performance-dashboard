@@ -16,6 +16,7 @@
 | Performance budget | выполнено | `budgets.json` |
 | Проверка `budgets.json` в pipeline | выполнено | `scripts/budget-check.js`, `reports/*budget-check.md` |
 | Строгий режим блокировки сборки | выполнено | `lighthouserc.strict.cjs`, `.github/workflows/performance.yml`, `npm run perf:ci` |
+| Ручной workflow полного эксперимента | выполнено | `.github/workflows/performance-experiment.yml`, `npm run perf:experiment` |
 | Автоматическая обработка отчетов | выполнено | `scripts/performance-report.js` |
 | Сравнение до/после | выполнено | `scripts/compare-performance.js` |
 | GitHub Actions workflow | выполнено | `.github/workflows/performance.yml` |
@@ -39,7 +40,7 @@
 - таблицы измерений из `reports/*.md`;
 - скриншоты из `docs/screenshots/`;
 - конфигурации из `lighthouserc.cjs`, `lighthouserc.baseline.cjs`, `budgets.json`;
-- workflow из `.github/workflows/performance.yml`.
+- workflow из `.github/workflows/performance.yml` и `.github/workflows/performance-experiment.yml`.
 
 ## Что остается за текстовой частью диссертации
 
