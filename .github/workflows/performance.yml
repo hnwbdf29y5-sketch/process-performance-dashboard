@@ -33,6 +33,9 @@ jobs:
       - name: Generate performance summary
         run: npm run perf:report
 
+      - name: Check performance budget
+        run: npm run budget:check
+
       - name: Upload performance artifacts
         uses: actions/upload-artifact@v5
         with:

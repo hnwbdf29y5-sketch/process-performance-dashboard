@@ -37,10 +37,17 @@ async function readReports() {
     const reportUrl = data.finalDisplayedUrl || data.finalUrl || data.requestedUrl
     if (!reportUrl || !data.categories?.performance || !data.audits) continue
     const pathname = new URL(reportUrl).pathname
+    const resourceItems = data.audits['resource-summary']?.details?.items ?? []
+    const resources = Object.fromEntries(resourceItems.map((item) => [
+      item.resourceType,
+      Math.round((item.transferSize ?? 0) / 1024),
+    ]))
     reports.push({
       route: pathname,
       score: Math.round((data.categories.performance.score ?? 0) * 100),
       transferKb: Math.round((data.audits['total-byte-weight']?.numericValue ?? 0) / 1024),
+      scriptKb: resources.script ?? 0,
+      imageKb: resources.image ?? 0,
       requests: data.audits['network-requests']?.details?.items?.length ?? 0,
       fcp: data.audits[metricMap.fcp]?.numericValue ?? 0,
       lcp: data.audits[metricMap.lcp]?.numericValue ?? 0,
@@ -71,6 +78,8 @@ function summarize(reports) {
     cls: formatNumber(median(group.map((item) => item.cls)), 3),
     si: formatNumber(median(group.map((item) => item.si)) / 1000),
     transferKb: Math.round(median(group.map((item) => item.transferKb))),
+    scriptKb: Math.round(median(group.map((item) => item.scriptKb))),
+    imageKb: Math.round(median(group.map((item) => item.imageKb))),
     requests: Math.round(median(group.map((item) => item.requests))),
   }))
 }
@@ -81,11 +90,11 @@ function toMarkdown(rows) {
     '',
     'Медианные значения рассчитаны по JSON-отчетам Lighthouse CI.',
     '',
-    '| Маршрут | Прогонов | Оценка | FCP, с | LCP, с | TBT, мс | CLS | Speed Index, с | Передача, KB | Запросов |',
-    '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
+    '| Маршрут | Прогонов | Оценка | FCP, с | LCP, с | TBT, мс | CLS | Speed Index, с | JS, KB | Images, KB | Передача, KB | Запросов |',
+    '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
   ]
   const body = rows.map((row) => (
-    `| ${row.route} | ${row.runs} | ${row.score} | ${row.fcp} | ${row.lcp} | ${row.tbt} | ${row.cls} | ${row.si} | ${row.transferKb} | ${row.requests} |`
+    `| ${row.route} | ${row.runs} | ${row.score} | ${row.fcp} | ${row.lcp} | ${row.tbt} | ${row.cls} | ${row.si} | ${row.scriptKb} | ${row.imageKb} | ${row.transferKb} | ${row.requests} |`
   ))
   return [...header, ...body, ''].join('\n')
 }

@@ -41,7 +41,9 @@ npm run dev
 npm run build
 npm run lint
 npm run lhci
+npm run lhci:strict
 npm run perf:report
+npm run budget:check
 npm run perf:compare
 npm run perf:experiment
 ```
@@ -55,9 +57,14 @@ npm run perf:experiment
 - `budgets.json` — performance budget;
 - `lighthouserc.cjs` — конфигурация Lighthouse CI для оптимизированной версии;
 - `lighthouserc.baseline.cjs` — конфигурация Lighthouse CI для исходной версии;
+- `lighthouserc.strict.cjs` — строгая конфигурация, где превышение порогов завершает проверку ошибкой;
 - `reports/baseline-summary.md` — исходные показатели;
 - `reports/performance-summary.md` — показатели после оптимизации;
 - `reports/performance-comparison.md` — таблица сравнения до/после;
+- `reports/baseline-budget-check.md` — проверка исходной версии по `budgets.json`;
+- `reports/performance-budget-check.md` — проверка оптимизированной версии по `budgets.json`;
 - `docs/experiment-plan.md` — методика эксперимента;
 - `docs/chapter-3-materials.md` — готовые материалы для главы 3;
-- `docs/screenshots/` — скриншоты русскоязычного интерфейса для приложений.
+- `docs/optimization-map.md` — таблица “проблема → метрика → оптимизация → результат”;
+- `docs/screenshots/` — скриншоты русскоязычного интерфейса для приложений;
+- `docs/lighthouse-html/` — HTML-отчеты Lighthouse для приложений.

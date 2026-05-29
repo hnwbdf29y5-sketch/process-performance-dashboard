@@ -47,12 +47,25 @@ function BaselineCost() {
     if (checksumRef.current) {
       checksumRef.current.textContent = `контрольная сумма main thread: ${Math.round(nextChecksum)}`
     }
+
+    import('./baseline/heavyBaseline').then((module) => {
+      const analysisResult = module.runBaselineAnalysis()
+      if (checksumRef.current) {
+        checksumRef.current.textContent += `; тяжелый JS-модуль: ${analysisResult}`
+      }
+    })
   }, [])
 
   return (
     <section className="baseline-cost" aria-label="Исходная экспериментальная нагрузка">
       <strong>Исходная версия для эксперимента</strong>
       <span ref={checksumRef}>контрольная сумма main thread рассчитывается</span>
+      <img
+        alt="Тяжелая исходная схема технологического процесса"
+        height="220"
+        src="/baseline-process-map.svg"
+        width="880"
+      />
       <div>
         {rows.map((row) => (
           <i key={row} style={{ width: `${20 + (row % 18)}px` }} />

@@ -13,6 +13,7 @@ module.exports = {
       numberOfRuns: 5,
       settings: {
         preset: 'desktop',
+        budgets: require('./budgets.json'),
         chromeFlags: '--headless=new --no-sandbox',
       },
     },

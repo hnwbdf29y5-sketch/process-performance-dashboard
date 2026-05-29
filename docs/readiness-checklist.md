@@ -14,6 +14,8 @@
 | Lighthouse CI | выполнено | `lighthouserc.cjs` |
 | Baseline-режим для исходных измерений | выполнено | `lighthouserc.baseline.cjs`, `?variant=baseline` |
 | Performance budget | выполнено | `budgets.json` |
+| Проверка `budgets.json` в pipeline | выполнено | `scripts/budget-check.js`, `reports/*budget-check.md` |
+| Строгий режим блокировки сборки | выполнено | `lighthouserc.strict.cjs` |
 | Автоматическая обработка отчетов | выполнено | `scripts/performance-report.js` |
 | Сравнение до/после | выполнено | `scripts/compare-performance.js` |
 | GitHub Actions workflow | выполнено | `.github/workflows/performance.yml` |
@@ -21,6 +23,8 @@
 | Метрики после оптимизации | выполнено | `reports/performance-summary.md` |
 | Сравнительная таблица | выполнено | `reports/performance-comparison.md` |
 | Скриншоты приложения | выполнено | `docs/screenshots/` |
+| HTML-отчеты Lighthouse для приложений | выполнено | `docs/lighthouse-html/` |
+| Таблица “проблема → метрика → оптимизация → результат” | выполнено | `docs/optimization-map.md` |
 | Материалы для главы 3 | выполнено | `docs/chapter-3-materials.md` |
 
 ## Что использовать в диссертации

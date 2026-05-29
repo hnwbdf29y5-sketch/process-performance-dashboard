@@ -499,13 +499,24 @@ th {
   display: grid;
   gap: 8px;
   margin-bottom: 18px;
-  min-height: 180px;
+  min-height: 430px;
   padding: 14px;
 }
 
 .baseline-cost span {
   color: #9a3412;
   font-size: 0.85rem;
+}
+
+.baseline-cost img {
+  aspect-ratio: 4 / 1;
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  border-radius: var(--radius);
+  display: block;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .baseline-cost div {

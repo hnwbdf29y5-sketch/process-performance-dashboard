@@ -11,11 +11,14 @@
     "preview": "vite preview --host 0.0.0.0",
     "lhci": "lhci autorun",
     "lhci:baseline": "lhci autorun --config=./lighthouserc.baseline.cjs",
+    "lhci:strict": "lhci autorun --config=./lighthouserc.strict.cjs",
     "perf:report": "node scripts/performance-report.js",
     "perf:report:baseline": "REPORTS_DIR=reports/baseline-lighthouse SUMMARY_NAME=baseline-summary node scripts/performance-report.js",
+    "budget:check": "node scripts/budget-check.js",
+    "budget:check:baseline": "REPORTS_DIR=reports/baseline-lighthouse SUMMARY_NAME=baseline-budget-check node scripts/budget-check.js",
     "perf:compare": "node scripts/compare-performance.js",
-    "perf:ci": "npm run build && npm run lhci && npm run perf:report",
-    "perf:experiment": "npm run build && npm run lhci:baseline && npm run perf:report:baseline && npm run lhci && npm run perf:report && npm run perf:compare"
+    "perf:ci": "npm run build && npm run lhci && npm run perf:report && npm run budget:check",
+    "perf:experiment": "npm run build && npm run lhci:baseline && npm run perf:report:baseline && npm run budget:check:baseline && npm run lhci && npm run perf:report && npm run budget:check && npm run perf:compare"
   },
   "dependencies": {
     "lucide-react": "^1.17.0",

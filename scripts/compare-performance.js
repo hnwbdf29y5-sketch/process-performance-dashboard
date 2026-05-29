@@ -32,18 +32,25 @@ const rows = baseline.map((before) => {
     lcpBefore: before.lcp,
     lcpAfter: after.lcp,
     lcpImprovement: percentChange(before.lcp, after.lcp),
+    scriptBefore: before.scriptKb,
+    scriptAfter: after.scriptKb,
+    scriptImprovement: percentChange(before.scriptKb, after.scriptKb),
+    imageBefore: before.imageKb,
+    imageAfter: after.imageKb,
+    imageImprovement: percentChange(before.imageKb, after.imageKb),
     transferBefore: before.transferKb,
     transferAfter: after.transferKb,
+    transferImprovement: percentChange(before.transferKb, after.transferKb),
   }
 })
 
 const markdown = [
   '# Сравнение показателей до и после оптимизации',
   '',
-  '| Маршрут | Оценка до | Оценка после | Изменение оценки | TBT до, мс | TBT после, мс | Улучшение TBT | LCP до, с | LCP после, с | Изменение LCP | Передача до, KB | Передача после, KB |',
-  '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
+  '| Маршрут | Оценка до | Оценка после | Изменение оценки | TBT до, мс | TBT после, мс | Улучшение TBT | LCP до, с | LCP после, с | Изменение LCP | JS до, KB | JS после, KB | Улучшение JS | Images до, KB | Images после, KB | Передача до, KB | Передача после, KB | Улучшение передачи |',
+  '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
   ...rows.map((row) => (
-    `| ${row.route} | ${row.scoreBefore} | ${row.scoreAfter} | ${row.scoreDelta} | ${row.tbtBefore} | ${row.tbtAfter} | ${row.tbtImprovement} | ${row.lcpBefore} | ${row.lcpAfter} | ${row.lcpImprovement} | ${row.transferBefore} | ${row.transferAfter} |`
+    `| ${row.route} | ${row.scoreBefore} | ${row.scoreAfter} | ${row.scoreDelta} | ${row.tbtBefore} | ${row.tbtAfter} | ${row.tbtImprovement} | ${row.lcpBefore} | ${row.lcpAfter} | ${row.lcpImprovement} | ${row.scriptBefore} | ${row.scriptAfter} | ${row.scriptImprovement} | ${row.imageBefore} | ${row.imageAfter} | ${row.transferBefore} | ${row.transferAfter} | ${row.transferImprovement} |`
   )),
   '',
 ].join('\n')
