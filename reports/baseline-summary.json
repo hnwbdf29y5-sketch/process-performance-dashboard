@@ -1,0 +1,62 @@
+[
+  {
+    "route": "/dashboard",
+    "runs": 5,
+    "score": 90,
+    "fcp": 0.37,
+    "lcp": 0.37,
+    "tbt": 270,
+    "cls": 0,
+    "si": 0.37,
+    "transferKb": 70,
+    "requests": 7
+  },
+  {
+    "route": "/details/line-a",
+    "runs": 5,
+    "score": 90,
+    "fcp": 0.37,
+    "lcp": 0.37,
+    "tbt": 270,
+    "cls": 0,
+    "si": 0.37,
+    "transferKb": 70,
+    "requests": 7
+  },
+  {
+    "route": "/events",
+    "runs": 5,
+    "score": 88,
+    "fcp": 0.35,
+    "lcp": 0.37,
+    "tbt": 290,
+    "cls": 0,
+    "si": 0.35,
+    "transferKb": 68,
+    "requests": 6
+  },
+  {
+    "route": "/reports",
+    "runs": 5,
+    "score": 88,
+    "fcp": 0.35,
+    "lcp": 0.37,
+    "tbt": 290,
+    "cls": 0,
+    "si": 0.35,
+    "transferKb": 69,
+    "requests": 6
+  },
+  {
+    "route": "/settings",
+    "runs": 5,
+    "score": 88,
+    "fcp": 0.35,
+    "lcp": 0.37,
+    "tbt": 290,
+    "cls": 0,
+    "si": 0.35,
+    "transferKb": 69,
+    "requests": 6
+  }
+]

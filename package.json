@@ -1,0 +1,40 @@
+{
+  "name": "process-performance-dashboard",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Frontend prototype for automated web performance control and optimization research.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview --host 0.0.0.0",
+    "lhci": "lhci autorun",
+    "lhci:baseline": "lhci autorun --config=./lighthouserc.baseline.cjs",
+    "perf:report": "node scripts/performance-report.js",
+    "perf:report:baseline": "REPORTS_DIR=reports/baseline-lighthouse SUMMARY_NAME=baseline-summary node scripts/performance-report.js",
+    "perf:compare": "node scripts/compare-performance.js",
+    "perf:ci": "npm run build && npm run lhci && npm run perf:report",
+    "perf:experiment": "npm run build && npm run lhci:baseline && npm run perf:report:baseline && npm run lhci && npm run perf:report && npm run perf:compare"
+  },
+  "dependencies": {
+    "lucide-react": "^1.17.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@lhci/cli": "^0.15.1",
+    "@types/node": "^24.12.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.59.2",
+    "vite": "^8.0.12"
+  }
+}
