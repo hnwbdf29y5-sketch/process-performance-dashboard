@@ -25,6 +25,7 @@
 | Скриншоты приложения | выполнено | `docs/screenshots/` |
 | HTML-отчеты Lighthouse для приложений | выполнено | `docs/lighthouse-html/` |
 | Таблица “проблема → метрика → оптимизация → результат” | выполнено | `docs/optimization-map.md` |
+| Отдельные ветки baseline/optimized | выполнено | `baseline-version`, `optimized-version` |
 | Материалы для главы 3 | выполнено | `docs/chapter-3-materials.md` |
 
 ## Что использовать в диссертации

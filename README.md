@@ -68,3 +68,10 @@ npm run perf:experiment
 - `docs/optimization-map.md` — таблица “проблема → метрика → оптимизация → результат”;
 - `docs/screenshots/` — скриншоты русскоязычного интерфейса для приложений;
 - `docs/lighthouse-html/` — HTML-отчеты Lighthouse для приложений.
+
+## Ветки эксперимента
+
+- `main` и `optimized-version` — оптимизированная версия приложения;
+- `baseline-version` — исходная версия, где baseline-деградации включены по умолчанию.
+
+В основной ветке baseline также доступен воспроизводимо через query-параметр `?variant=baseline`.
