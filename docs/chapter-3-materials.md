@@ -15,6 +15,7 @@
 | `reports.jpg` | отчеты по производительности |
 | `settings.jpg` | пороговые значения performance budget |
 | `details.jpg` | карточка контролируемого объекта |
+| `github-actions-success.jpg` | успешный запуск GitHub Actions |
 
 ## 3.2 Реализация автоматизированного конвейера измерений
 

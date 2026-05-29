@@ -23,6 +23,7 @@
 | Метрики после оптимизации | выполнено | `reports/performance-summary.md` |
 | Сравнительная таблица | выполнено | `reports/performance-comparison.md` |
 | Скриншоты приложения | выполнено | `docs/screenshots/` |
+| Скриншот успешного GitHub Actions | выполнено | `docs/screenshots/github-actions-success.jpg` |
 | HTML-отчеты Lighthouse для приложений | выполнено | `docs/lighthouse-html/` |
 | Таблица “проблема → метрика → оптимизация → результат” | выполнено | `docs/optimization-map.md` |
 | Отдельные ветки baseline/optimized | выполнено | `baseline-version`, `optimized-version` |
