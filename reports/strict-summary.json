@@ -1,0 +1,72 @@
+[
+  {
+    "route": "/dashboard",
+    "runs": 3,
+    "score": 100,
+    "fcp": 0.38,
+    "lcp": 0.38,
+    "tbt": 0,
+    "cls": 0,
+    "si": 0.38,
+    "transferKb": 71,
+    "scriptKb": 66,
+    "imageKb": 0,
+    "requests": 7
+  },
+  {
+    "route": "/details/line-a",
+    "runs": 3,
+    "score": 100,
+    "fcp": 0.37,
+    "lcp": 0.37,
+    "tbt": 0,
+    "cls": 0,
+    "si": 0.37,
+    "transferKb": 71,
+    "scriptKb": 66,
+    "imageKb": 0,
+    "requests": 7
+  },
+  {
+    "route": "/events",
+    "runs": 3,
+    "score": 100,
+    "fcp": 0.35,
+    "lcp": 0.37,
+    "tbt": 0,
+    "cls": 0,
+    "si": 0.35,
+    "transferKb": 70,
+    "scriptKb": 65,
+    "imageKb": 0,
+    "requests": 6
+  },
+  {
+    "route": "/reports",
+    "runs": 3,
+    "score": 100,
+    "fcp": 0.35,
+    "lcp": 0.37,
+    "tbt": 0,
+    "cls": 0,
+    "si": 0.35,
+    "transferKb": 70,
+    "scriptKb": 65,
+    "imageKb": 0,
+    "requests": 6
+  },
+  {
+    "route": "/settings",
+    "runs": 3,
+    "score": 100,
+    "fcp": 0.35,
+    "lcp": 0.37,
+    "tbt": 0,
+    "cls": 0,
+    "si": 0.35,
+    "transferKb": 70,
+    "scriptKb": 65,
+    "imageKb": 0,
+    "requests": 6
+  }
+]

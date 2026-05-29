@@ -27,14 +27,14 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run Lighthouse CI
-        run: npm run lhci
+      - name: Run strict Lighthouse CI
+        run: npm run lhci:strict
 
       - name: Generate performance summary
-        run: npm run perf:report
+        run: npm run perf:report:strict
 
       - name: Check performance budget
-        run: npm run budget:check
+        run: npm run budget:check:strict
 
       - name: Upload performance artifacts
         uses: actions/upload-artifact@v5

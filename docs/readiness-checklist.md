@@ -15,7 +15,7 @@
 | Baseline-режим для исходных измерений | выполнено | `lighthouserc.baseline.cjs`, `?variant=baseline` |
 | Performance budget | выполнено | `budgets.json` |
 | Проверка `budgets.json` в pipeline | выполнено | `scripts/budget-check.js`, `reports/*budget-check.md` |
-| Строгий режим блокировки сборки | выполнено | `lighthouserc.strict.cjs` |
+| Строгий режим блокировки сборки | выполнено | `lighthouserc.strict.cjs`, `.github/workflows/performance.yml`, `npm run perf:ci` |
 | Автоматическая обработка отчетов | выполнено | `scripts/performance-report.js` |
 | Сравнение до/после | выполнено | `scripts/compare-performance.js` |
 | GitHub Actions workflow | выполнено | `.github/workflows/performance.yml` |
@@ -35,6 +35,7 @@
 
 - описание приложения из `docs/chapter-3-materials.md`;
 - план эксперимента из `docs/experiment-plan.md`;
+- безопасные формулировки из `docs/dissertation-wording.md`;
 - таблицы измерений из `reports/*.md`;
 - скриншоты из `docs/screenshots/`;
 - конфигурации из `lighthouserc.cjs`, `lighthouserc.baseline.cjs`, `budgets.json`;

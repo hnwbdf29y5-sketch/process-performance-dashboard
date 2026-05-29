@@ -40,15 +40,18 @@ npm install
 npm run dev
 npm run build
 npm run lint
+npm run clean:strict
 npm run lhci
 npm run lhci:strict
 npm run perf:report
+npm run perf:report:strict
 npm run budget:check
+npm run budget:check:strict
 npm run perf:compare
 npm run perf:experiment
 ```
 
-`npm run perf:ci` собирает приложение, запускает Lighthouse CI и формирует `reports/performance-summary.md`.
+`npm run perf:ci` собирает приложение, запускает строгую конфигурацию Lighthouse CI и формирует `reports/strict-summary.md` и `reports/strict-budget-check.md`. В этом режиме превышение ключевых порогов завершает проверку ошибкой.
 
 `npm run perf:experiment` измеряет контролируемую исходную версию (`?variant=baseline`), оптимизированную версию и формирует сравнение в `reports/performance-comparison.md`.
 
@@ -63,11 +66,20 @@ npm run perf:experiment
 - `reports/performance-comparison.md` — таблица сравнения до/после;
 - `reports/baseline-budget-check.md` — проверка исходной версии по `budgets.json`;
 - `reports/performance-budget-check.md` — проверка оптимизированной версии по `budgets.json`;
+- `reports/strict-summary.md` — сводка строгого CI-запуска;
+- `reports/strict-budget-check.md` — проверка budget по строгому CI-запуску;
 - `docs/experiment-plan.md` — методика эксперимента;
 - `docs/chapter-3-materials.md` — готовые материалы для главы 3;
 - `docs/optimization-map.md` — таблица “проблема → метрика → оптимизация → результат”;
+- `docs/dissertation-wording.md` — безопасные формулировки для текста диссертации и защиты;
 - `docs/screenshots/` — скриншоты русскоязычного интерфейса для приложений;
 - `docs/lighthouse-html/` — HTML-отчеты Lighthouse для приложений.
+
+## Как интерпретировать результаты
+
+Исходная версия является контролируемым baseline-вариантом с воспроизводимыми деградациями производительности. Ее задача — проверить, выявляет ли автоматизированный контур превышение порогов и фиксирует ли эффект после устранения проблемных участков.
+
+Основной доказанный эффект оптимизации относится к блокировке основного потока, объему JavaScript, общему объему передачи и количеству запросов. В тексте диссертации корректно писать, что методика выявила отклонения по TBT и ресурсным метрикам, а затем подтвердила улучшение после оптимизации. Не следует утверждать, что эксперимент доказал улучшение всех возможных аспектов производительности веб-приложений.
 
 ## Ветки эксперимента
 
