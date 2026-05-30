@@ -25,7 +25,7 @@ export type ProcessEvent = {
 
 export const processMetrics: ProcessMetric[] = [
   { label: 'Давление линии', value: 7.8, unit: 'МПа', limit: '6.8-8.4 МПа', status: 'normal', delta: '+0.3' },
-  { label: 'Температура реактора', value: 164, unit: 'C', limit: '150-170 C', status: 'warning', delta: '+4.1' },
+  { label: 'Температура реактора', value: 164, unit: '°C', limit: '150-170 °C', status: 'warning', delta: '+4.1' },
   { label: 'Вибрация насоса', value: 3.2, unit: 'мм/с', limit: '< 4.5 мм/с', status: 'normal', delta: '-0.4' },
   { label: 'Энергетическая нагрузка', value: 82, unit: '%', limit: '< 88%', status: 'normal', delta: '+1.8' },
 ]
@@ -58,10 +58,10 @@ export const reports = [
 ]
 
 export const performanceBudget = [
-  { metric: 'LCP', target: '<= 2.5 с', reason: 'Порог Core Web Vitals для загрузки основного контента' },
-  { metric: 'TBT', target: '<= 200 мс', reason: 'Ограничение блокировки основного потока' },
-  { metric: 'CLS', target: '<= 0.10', reason: 'Контроль визуальной стабильности интерфейса' },
-  { metric: 'Lighthouse Performance', target: '>= 90', reason: 'Интегральная оценка производительности' },
-  { metric: 'Передача JavaScript', target: '<= 300 KB', reason: 'Локальный budget размера клиентского JavaScript' },
-  { metric: 'Количество запросов', target: '<= 50', reason: 'Ограничение сетевой сложности загрузки' },
+  { metric: 'Отображение основного блока', target: '<= 2.5 с', reason: 'Время появления главного содержимого страницы' },
+  { metric: 'Блокировка основного потока', target: '<= 200 мс', reason: 'Ограничение задержек при выполнении сценариев' },
+  { metric: 'Стабильность верстки', target: '<= 0.10', reason: 'Контроль заметных сдвигов элементов интерфейса' },
+  { metric: 'Итоговая оценка страницы', target: '>= 90', reason: 'Обобщенный результат проверки раздела' },
+  { metric: 'Передача сценариев', target: '<= 300 КБ', reason: 'Ограничение объема загружаемого кода' },
+  { metric: 'Количество запросов', target: '<= 50', reason: 'Ограничение числа сетевых обращений при загрузке' },
 ]

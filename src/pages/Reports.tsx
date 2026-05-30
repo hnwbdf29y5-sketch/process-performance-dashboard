@@ -7,8 +7,8 @@ function Reports() {
       <section className="panel">
         <div className="panel-heading">
           <div>
-            <p className="eyebrow">Сводка Lighthouse CI</p>
-            <h2>Показатели производительности маршрутов</h2>
+            <p className="eyebrow">Результаты проверки</p>
+            <h2>Показатели по разделам интерфейса</h2>
           </div>
           <button className="text-button" type="button">
             <Download size={16} aria-hidden="true" />
@@ -19,11 +19,11 @@ function Reports() {
           <table>
             <thead>
               <tr>
-                <th>Маршрут</th>
+                <th>Раздел</th>
                 <th>LCP, с</th>
                 <th>TBT, мс</th>
                 <th>CLS</th>
-                <th>JS, KB</th>
+                <th>Скрипты, КБ</th>
                 <th>Оценка</th>
               </tr>
             </thead>
@@ -45,14 +45,14 @@ function Reports() {
 
       <section className="panel">
         <div className="panel-heading compact">
-          <h2>Сформированные артефакты</h2>
+          <h2>Подготовленные материалы</h2>
           <FileChartColumn size={18} aria-hidden="true" />
         </div>
         <div className="artifact-grid">
-          <div>HTML-отчеты Lighthouse</div>
-          <div>JSON-данные измерений</div>
-          <div>Markdown-сводка метрик</div>
-          <div>Решение по CI budget</div>
+          <div>Отчеты проверки страниц</div>
+          <div>Исходные данные измерений</div>
+          <div>Сводные таблицы</div>
+          <div>Проверка пороговых значений</div>
         </div>
       </section>
     </section>

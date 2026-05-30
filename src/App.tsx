@@ -18,8 +18,8 @@ const Details = lazy(() => import('./pages/Details'))
 const routes = [
   { path: '/dashboard', label: 'Панель', title: 'Панель мониторинга', icon: LayoutDashboard },
   { path: '/events', label: 'События', title: 'Журнал событий', icon: Bell },
-  { path: '/reports', label: 'Отчеты', title: 'Отчеты по производительности', icon: FileText },
-  { path: '/settings', label: 'Пороги', title: 'Пороговые значения', icon: SlidersHorizontal },
+  { path: '/reports', label: 'Отчеты', title: 'Сводка измерений', icon: FileText },
+  { path: '/settings', label: 'Пороги', title: 'Контрольные пороги', icon: SlidersHorizontal },
   { path: '/details/line-a', label: 'Объект', title: 'Карточка объекта', icon: Gauge },
 ]
 
@@ -45,13 +45,13 @@ function BaselineCost() {
     }
 
     if (checksumRef.current) {
-      checksumRef.current.textContent = `контрольная сумма main thread: ${Math.round(nextChecksum)}`
+      checksumRef.current.textContent = `контрольная сумма основного потока: ${Math.round(nextChecksum)}`
     }
 
     import('./baseline/heavyBaseline').then((module) => {
       const analysisResult = module.runBaselineAnalysis()
       if (checksumRef.current) {
-        checksumRef.current.textContent += `; тяжелый JS-модуль: ${analysisResult}`
+        checksumRef.current.textContent += `; дополнительный модуль: ${analysisResult}`
       }
     })
   }, [])
@@ -59,7 +59,7 @@ function BaselineCost() {
   return (
     <section className="baseline-cost" aria-label="Исходная экспериментальная нагрузка">
       <strong>Исходная версия для эксперимента</strong>
-      <span ref={checksumRef}>контрольная сумма main thread рассчитывается</span>
+      <span ref={checksumRef}>контрольная сумма основного потока рассчитывается</span>
       <img
         alt="Тяжелая исходная схема технологического процесса"
         height="220"
@@ -104,8 +104,8 @@ function App() {
         }}>
           <span className="brand-mark"><Activity size={20} aria-hidden="true" /></span>
           <span>
-            <strong>ProcessControl</strong>
-            <small>лаборатория метрик</small>
+            <strong>АРМ контроля</strong>
+            <small>линия А</small>
           </span>
         </a>
         <nav className="nav-list">
@@ -134,16 +134,16 @@ function App() {
       <main className="workspace">
         <header className="topbar">
           <div>
-            <p className="eyebrow">Автоматизированный контроль производительности</p>
+            <p className="eyebrow">Контроль технологического процесса</p>
             <h1>{title}</h1>
           </div>
           <div className="topbar-actions" aria-label="Текущее состояние контроля">
-            <span className="status-pill good">Budget CI: выполнен</span>
-            <span className="status-pill neutral"><BarChart3 size={16} aria-hidden="true" /> 5 маршрутов</span>
+            <span className="status-pill good">Пороги соблюдены</span>
+            <span className="status-pill neutral"><BarChart3 size={16} aria-hidden="true" /> 5 разделов</span>
           </div>
         </header>
 
-        <Suspense fallback={<div className="loading-panel">Загрузка измеряемого маршрута...</div>}>
+        <Suspense fallback={<div className="loading-panel">Загрузка раздела...</div>}>
           {baselineExperiment && <BaselineCost />}
           {path === '/events' && <Events />}
           {path === '/reports' && <Reports />}

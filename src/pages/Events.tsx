@@ -14,7 +14,7 @@ function Events() {
         <label className="search-box">
           <Search size={16} aria-hidden="true" />
           <span className="sr-only">Поиск событий</span>
-          <input placeholder="Поиск по журналу событий" />
+          <input placeholder="Найти событие" />
         </label>
         <button className="icon-button" type="button" aria-label="Фильтр событий">
           <Filter size={18} aria-hidden="true" />
@@ -27,7 +27,7 @@ function Events() {
               <tr>
                 <th>Время</th>
                 <th>Объект</th>
-                <th>Статус</th>
+                <th>Состояние</th>
                 <th>Сообщение</th>
               </tr>
             </thead>

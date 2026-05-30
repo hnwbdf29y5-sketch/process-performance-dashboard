@@ -6,10 +6,10 @@ function Settings() {
       <section className="panel">
         <div className="panel-heading">
           <div>
-            <p className="eyebrow">Performance budget</p>
-            <h2>Пороговые значения автоматизированного контроля</h2>
+            <p className="eyebrow">Настройки контроля</p>
+            <h2>Пороговые значения проверки</h2>
           </div>
-          <span className="status-pill neutral">режим предупреждений</span>
+          <span className="status-pill neutral">контроль включен</span>
         </div>
         <div className="budget-list">
           {performanceBudget.map((item) => (

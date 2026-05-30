@@ -9,18 +9,18 @@ function Details() {
         <div>
           <p className="eyebrow">Контролируемый объект</p>
           <h2>Линия A / реактор R-12</h2>
-          <p className="muted">Непрерывный мониторинг давления, температуры, вибрации и стабильности реакции системы управления.</p>
+          <p className="muted">Наблюдение за давлением, температурой, вибрацией и нагрузкой на участке линии.</p>
         </div>
         <div className="object-kpis">
-          <span><Thermometer size={16} aria-hidden="true" /> 164 C</span>
-          <span><Waves size={16} aria-hidden="true" /> 7.8 MPa</span>
+          <span><Thermometer size={16} aria-hidden="true" /> 164 °C</span>
+          <span><Waves size={16} aria-hidden="true" /> 7.8 МПа</span>
           <span><Cpu size={16} aria-hidden="true" /> 82%</span>
         </div>
       </section>
 
       <section className="panel chart-panel">
         <div className="panel-heading compact">
-          <h2>Профиль сигналов объекта</h2>
+          <h2>Изменение параметров объекта</h2>
         </div>
         <LineChart
           data={trendData}

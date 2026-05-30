@@ -15,8 +15,8 @@ function Dashboard() {
       <section className="panel chart-panel">
         <div className="panel-heading">
           <div>
-            <p className="eyebrow">Контролируемые параметры</p>
-            <h2>Динамика процесса за текущую смену</h2>
+            <p className="eyebrow">Параметры линии</p>
+            <h2>Изменение показателей за смену</h2>
           </div>
           <span className="status-pill good"><CheckCircle2 size={16} aria-hidden="true" /> стабильно</span>
         </div>
@@ -52,14 +52,14 @@ function Dashboard() {
 
         <section className="panel">
           <div className="panel-heading compact">
-            <h2>Контур контроля</h2>
+            <h2>Порядок проверки</h2>
             <Gauge size={18} aria-hidden="true" />
           </div>
           <ol className="process-steps">
-            <li>Сборка frontend-артефакта</li>
-            <li>Запуск Lighthouse CI для целевых маршрутов</li>
-            <li>Сравнение метрик с performance budget</li>
-            <li>Формирование отчета и сигналов оптимизации</li>
+            <li>Сборка контрольной версии</li>
+            <li>Проверка основных разделов</li>
+            <li>Сравнение с установленными порогами</li>
+            <li>Подготовка отчета по результатам</li>
           </ol>
         </section>
       </div>
