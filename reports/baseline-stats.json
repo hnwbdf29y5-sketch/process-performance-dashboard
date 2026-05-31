@@ -1,0 +1,272 @@
+[
+  {
+    "route": "/dashboard",
+    "runs": 9,
+    "score": {
+      "min": 88,
+      "median": 89,
+      "max": 90
+    },
+    "fcpSec": {
+      "min": 0.36568224999999993,
+      "median": 0.36843512500000003,
+      "max": 0.380838625
+    },
+    "lcpSec": {
+      "min": 0.3688187,
+      "median": 0.37212215000000004,
+      "max": 0.38740634999999995
+    },
+    "tbtMs": {
+      "min": 261.00000000000006,
+      "median": 272,
+      "max": 291.5
+    },
+    "cls": {
+      "min": 0.000058,
+      "median": 0.000058,
+      "max": 0.000058
+    },
+    "speedIndexSec": {
+      "min": 0.36568224999999993,
+      "median": 0.36843512500000003,
+      "max": 0.380838625
+    },
+    "scriptKb": {
+      "min": 67,
+      "median": 67,
+      "max": 67
+    },
+    "imageKb": {
+      "min": 0,
+      "median": 0,
+      "max": 0
+    },
+    "transferKb": {
+      "min": 72,
+      "median": 72,
+      "max": 72
+    },
+    "requests": {
+      "min": 7,
+      "median": 7,
+      "max": 7
+    }
+  },
+  {
+    "route": "/details/line-a",
+    "runs": 9,
+    "score": {
+      "min": 87,
+      "median": 88,
+      "max": 88
+    },
+    "fcpSec": {
+      "min": 0.36553915,
+      "median": 0.3667132,
+      "max": 0.3801886
+    },
+    "lcpSec": {
+      "min": 0.40905220000000003,
+      "median": 0.4106176,
+      "max": 0.42858480000000004
+    },
+    "tbtMs": {
+      "min": 290.05985,
+      "median": 296.02272500000004,
+      "max": 313.39639999999997
+    },
+    "cls": {
+      "min": 0.000352,
+      "median": 0.000595,
+      "max": 0.000614
+    },
+    "speedIndexSec": {
+      "min": 0.36553915,
+      "median": 0.3667132,
+      "max": 0.3801886
+    },
+    "scriptKb": {
+      "min": 68,
+      "median": 68,
+      "max": 68
+    },
+    "imageKb": {
+      "min": 0,
+      "median": 0,
+      "max": 0
+    },
+    "transferKb": {
+      "min": 73,
+      "median": 73,
+      "max": 73
+    },
+    "requests": {
+      "min": 8,
+      "median": 8,
+      "max": 8
+    }
+  },
+  {
+    "route": "/events",
+    "runs": 9,
+    "score": {
+      "min": 88,
+      "median": 88,
+      "max": 89
+    },
+    "fcpSec": {
+      "min": 0.344821625,
+      "median": 0.34627099999999994,
+      "max": 0.36186375
+    },
+    "lcpSec": {
+      "min": 0.36778595000000003,
+      "median": 0.3695252,
+      "max": 0.3882365
+    },
+    "tbtMs": {
+      "min": 278.00000000000006,
+      "median": 288,
+      "max": 300.50000000000006
+    },
+    "cls": {
+      "min": 0.037366,
+      "median": 0.037366,
+      "max": 0.037366
+    },
+    "speedIndexSec": {
+      "min": 0.344821625,
+      "median": 0.34627099999999994,
+      "max": 0.36186375
+    },
+    "scriptKb": {
+      "min": 66,
+      "median": 66,
+      "max": 66
+    },
+    "imageKb": {
+      "min": 0,
+      "median": 0,
+      "max": 0
+    },
+    "transferKb": {
+      "min": 71,
+      "median": 71,
+      "max": 71
+    },
+    "requests": {
+      "min": 6,
+      "median": 6,
+      "max": 6
+    }
+  },
+  {
+    "route": "/reports",
+    "runs": 9,
+    "score": {
+      "min": 87,
+      "median": 87,
+      "max": 88
+    },
+    "fcpSec": {
+      "min": 0.36493345,
+      "median": 0.366911,
+      "max": 0.383307
+    },
+    "lcpSec": {
+      "min": 0.4082446,
+      "median": 0.410548,
+      "max": 0.433076
+    },
+    "tbtMs": {
+      "min": 298.308475,
+      "median": 305.442475,
+      "max": 315.6155
+    },
+    "cls": {
+      "min": 0.000219,
+      "median": 0.00023,
+      "max": 0.00025
+    },
+    "speedIndexSec": {
+      "min": 0.36493345,
+      "median": 0.366911,
+      "max": 0.383307
+    },
+    "scriptKb": {
+      "min": 67,
+      "median": 67,
+      "max": 67
+    },
+    "imageKb": {
+      "min": 0,
+      "median": 0,
+      "max": 0
+    },
+    "transferKb": {
+      "min": 72,
+      "median": 72,
+      "max": 72
+    },
+    "requests": {
+      "min": 7,
+      "median": 7,
+      "max": 7
+    }
+  },
+  {
+    "route": "/settings",
+    "runs": 9,
+    "score": {
+      "min": 100,
+      "median": 100,
+      "max": 100
+    },
+    "fcpSec": {
+      "min": 0.342114,
+      "median": 0.343238,
+      "max": 0.34920375000000003
+    },
+    "lcpSec": {
+      "min": 0.3625368,
+      "median": 0.3632856,
+      "max": 0.37104449999999994
+    },
+    "tbtMs": {
+      "min": 0,
+      "median": 0,
+      "max": 0
+    },
+    "cls": {
+      "min": 0,
+      "median": 0,
+      "max": 0
+    },
+    "speedIndexSec": {
+      "min": 0.342114,
+      "median": 0.343238,
+      "max": 0.34920375000000003
+    },
+    "scriptKb": {
+      "min": 63,
+      "median": 63,
+      "max": 63
+    },
+    "imageKb": {
+      "min": 0,
+      "median": 0,
+      "max": 0
+    },
+    "transferKb": {
+      "min": 67,
+      "median": 67,
+      "max": 67
+    },
+    "requests": {
+      "min": 5,
+      "median": 5,
+      "max": 5
+    }
+  }
+]

@@ -68,7 +68,7 @@ function summarize(reports) {
     byRoute.set(report.route, group)
   }
 
-  return [...byRoute.entries()].map(([route, group]) => ({
+  return [...byRoute.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([route, group]) => ({
     route,
     runs: group.length,
     score: Math.round(median(group.map((item) => item.score))),
@@ -90,7 +90,7 @@ function toMarkdown(rows) {
     '',
     'Медианные значения рассчитаны по JSON-отчетам Lighthouse CI.',
     '',
-    '| Маршрут | Прогонов | Оценка | FCP, с | LCP, с | TBT, мс | CLS | Speed Index, с | JS, KB | Images, KB | Передача, KB | Запросов |',
+    '| Маршрут | Прогонов | Оценка | FCP, с | LCP, с | TBT, мс | CLS | Speed Index, с | JS, КБ | Images, КБ | Передача, КБ | Запросов |',
     '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
   ]
   const body = rows.map((row) => (

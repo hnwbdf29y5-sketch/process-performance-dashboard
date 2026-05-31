@@ -1,13 +1,15 @@
 import { AlertTriangle, CheckCircle2, Gauge } from 'lucide-react'
 import { LineChart } from '../components/LineChart'
 import { MetricCard } from '../components/MetricCard'
-import { events, processMetrics, trendData } from '../data/processData'
+import { useTelemetryAnalysis } from '../hooks/useTelemetryAnalysis'
 
 function Dashboard() {
+  const { result, pending, mode } = useTelemetryAnalysis('dashboard')
+
   return (
     <section className="page-stack">
       <div className="metric-grid">
-        {processMetrics.map((metric) => (
+        {result.metrics.map((metric) => (
           <MetricCard key={metric.label} metric={metric} />
         ))}
       </div>
@@ -18,10 +20,10 @@ function Dashboard() {
             <p className="eyebrow">Параметры линии</p>
             <h2>Изменение показателей за смену</h2>
           </div>
-          <span className="status-pill good"><CheckCircle2 size={16} aria-hidden="true" /> стабильно</span>
+          <span className="status-pill good"><CheckCircle2 size={16} aria-hidden="true" /> {pending ? 'расчет' : 'стабильно'}</span>
         </div>
         <LineChart
-          data={trendData}
+          data={result.trend}
           series={[
             { key: 'pressure', label: 'Давление', color: '#2563eb' },
             { key: 'temperature', label: 'Температура', color: '#dc2626' },
@@ -37,7 +39,7 @@ function Dashboard() {
             <AlertTriangle size={18} aria-hidden="true" />
           </div>
           <div className="event-list compact-list">
-            {events.slice(0, 4).map((event) => (
+            {result.events.slice(0, 4).map((event) => (
               <article className="event-row" key={`${event.time}-${event.source}`}>
                 <span className={`event-dot ${event.type}`} />
                 <div>
@@ -56,7 +58,7 @@ function Dashboard() {
             <Gauge size={18} aria-hidden="true" />
           </div>
           <ol className="process-steps">
-            <li>Сборка контрольной версии</li>
+            <li>{mode === 'baseline' ? 'Расчет телеметрии в интерфейсе' : 'Расчет телеметрии в фоновом потоке'}</li>
             <li>Проверка основных разделов</li>
             <li>Сравнение с установленными порогами</li>
             <li>Подготовка отчета по результатам</li>

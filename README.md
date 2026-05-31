@@ -44,21 +44,25 @@
 npm install
 npm run dev
 npm run build
+npm run build:baseline
+npm run build:optimized
 npm run lint
 npm run clean:strict
+npm run clean:experiment
 npm run lhci
 npm run lhci:strict
 npm run perf:report
 npm run perf:report:strict
+npm run perf:stats
 npm run budget:check
 npm run budget:check:strict
 npm run perf:compare
 npm run perf:experiment
 ```
 
-`npm run perf:ci` собирает приложение, запускает строгую конфигурацию Lighthouse CI и формирует `reports/strict-summary.md` и `reports/strict-budget-check.md`. В этом режиме превышение ключевых порогов завершает проверку ошибкой.
+`npm run perf:ci` собирает optimized-версию, запускает строгую конфигурацию Lighthouse CI и формирует `reports/strict-summary.md` и `reports/strict-budget-check.md`. В этом режиме превышение ключевых порогов завершает проверку ошибкой.
 
-`npm run perf:experiment` измеряет контролируемую исходную версию (`?variant=baseline`), оптимизированную версию и формирует сравнение в `reports/performance-comparison.md`.
+`npm run perf:experiment` выполняет полный цикл: baseline-сборка, 9 прогонов Lighthouse CI, отчеты baseline, optimized-сборка, 9 прогонов Lighthouse CI, отчеты optimized, CSV всех прогонов и сравнение в `reports/performance-comparison.md`.
 
 ## Артефакты для диссертации
 
@@ -68,6 +72,10 @@ npm run perf:experiment
 - `lighthouserc.strict.cjs` — строгая конфигурация, где превышение порогов завершает проверку ошибкой;
 - `reports/baseline-summary.md` — исходные показатели;
 - `reports/performance-summary.md` — показатели после оптимизации;
+- `reports/baseline-stats.md` — min/median/max по исходным прогонам;
+- `reports/optimized-stats.md` — min/median/max по optimized-прогонам;
+- `reports/baseline-runs.csv` — все baseline-прогоны;
+- `reports/optimized-runs.csv` — все optimized-прогоны;
 - `reports/performance-comparison.md` — таблица сравнения до/после;
 - `reports/baseline-budget-check.md` — проверка исходной версии по `budgets.json`;
 - `reports/performance-budget-check.md` — проверка оптимизированной версии по `budgets.json`;
@@ -78,7 +86,7 @@ npm run perf:experiment
 - `docs/optimization-map.md` — таблица “проблема → метрика → оптимизация → результат”;
 - `docs/dissertation-wording.md` — безопасные формулировки для текста диссертации и защиты;
 - `docs/actions-evidence.md` — ссылки на успешные GitHub Actions runs и локальный ZIP artifact;
-- `docs/screenshots/` — скриншоты русскоязычного интерфейса для приложений;
+- `docs/print-screenshots/` — печатные PNG-скриншоты интерфейса, отчетов и конфигураций;
 - `docs/lighthouse-html/` — HTML-отчеты Lighthouse для приложений.
 
 ## GitHub Actions
@@ -89,13 +97,13 @@ npm run perf:experiment
 
 ## Как интерпретировать результаты
 
-Исходная версия является контролируемым baseline-вариантом с воспроизводимыми деградациями производительности. Ее задача — проверить, выявляет ли автоматизированный контур превышение порогов и фиксирует ли эффект после устранения проблемных участков.
+Исходная версия является baseline-сборкой с воспроизводимой неоптимизированной обработкой локальной телеметрии в основном потоке браузера. Ее задача — проверить, выявляет ли автоматизированный контур превышение порогов и фиксирует ли эффект после оптимизации.
 
-Основной доказанный эффект оптимизации относится к блокировке основного потока, объему JavaScript, общему объему передачи и количеству запросов. В тексте диссертации корректно писать, что методика выявила отклонения по TBT и ресурсным метрикам, а затем подтвердила улучшение после оптимизации. Не следует утверждать, что эксперимент доказал улучшение всех возможных аспектов производительности веб-приложений.
+Основной доказанный эффект оптимизации относится к блокировке основного потока. В финальном эксперименте baseline TBT составил 272 мс для `/dashboard`, 288 мс для `/events`, 305 мс для `/reports` и 296 мс для `/details/line-a`; после переноса обработки телеметрии в Web Worker optimized-сборка показала TBT 0 мс на всех маршрутах. Ресурсные метрики находятся в пределах performance budget.
 
 ## Ветки эксперимента
 
 - `main` и `optimized-version` — оптимизированная версия приложения;
-- `baseline-version` — исходная версия, где baseline-деградации включены по умолчанию.
+- `baseline-version` — историческая ветка раннего эксперимента.
 
-В основной ветке baseline также доступен воспроизводимо через query-параметр `?variant=baseline`.
+Актуальный baseline формируется сборочной командой `npm run build:baseline`, а не query-параметром.

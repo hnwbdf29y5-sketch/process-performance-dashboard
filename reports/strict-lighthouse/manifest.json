@@ -1,0 +1,182 @@
+[
+  {
+    "url": "http://localhost:4175/dashboard",
+    "isRepresentativeRun": false,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/dashboard-strict-2026_05_31_10_38_39-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/dashboard-strict-2026_05_31_10_38_39-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/dashboard",
+    "isRepresentativeRun": false,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/dashboard-strict-2026_05_31_10_39_00-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/dashboard-strict-2026_05_31_10_39_00-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/events",
+    "isRepresentativeRun": false,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/events-strict-2026_05_31_10_39_11-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/events-strict-2026_05_31_10_39_11-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/events",
+    "isRepresentativeRun": false,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/events-strict-2026_05_31_10_39_32-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/events-strict-2026_05_31_10_39_32-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/reports",
+    "isRepresentativeRun": false,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/reports-strict-2026_05_31_10_39_43-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/reports-strict-2026_05_31_10_39_43-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/reports",
+    "isRepresentativeRun": false,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/reports-strict-2026_05_31_10_39_54-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/reports-strict-2026_05_31_10_39_54-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/settings",
+    "isRepresentativeRun": false,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/settings-strict-2026_05_31_10_40_25-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/settings-strict-2026_05_31_10_40_25-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.94,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/settings",
+    "isRepresentativeRun": false,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/settings-strict-2026_05_31_10_40_35-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/settings-strict-2026_05_31_10_40_35-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.94,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/details/line-a",
+    "isRepresentativeRun": false,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/details_line_a-strict-2026_05_31_10_40_46-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/details_line_a-strict-2026_05_31_10_40_46-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/details/line-a",
+    "isRepresentativeRun": false,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/details_line_a-strict-2026_05_31_10_40_56-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/details_line_a-strict-2026_05_31_10_40_56-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/dashboard",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/dashboard-strict-2026_05_31_10_38_50-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/dashboard-strict-2026_05_31_10_38_50-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/events",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/events-strict-2026_05_31_10_39_21-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/events-strict-2026_05_31_10_39_21-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/reports",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/reports-strict-2026_05_31_10_40_04-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/reports-strict-2026_05_31_10_40_04-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/settings",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/settings-strict-2026_05_31_10_40_15-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/settings-strict-2026_05_31_10_40_15-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.94,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  },
+  {
+    "url": "http://localhost:4175/details/line-a",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/details_line_a-strict-2026_05_31_10_41_07-report.html",
+    "jsonPath": "/Users/boyarinov/Documents/Диссертация/reports/strict-lighthouse/details_line_a-strict-2026_05_31_10_41_07-report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 0.82
+    }
+  }
+]

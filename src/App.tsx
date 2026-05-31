@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
 import {
   Activity,
   BarChart3,
@@ -8,6 +8,7 @@ import {
   LayoutDashboard,
   SlidersHorizontal,
 } from 'lucide-react'
+import { experimentMode } from './lib/experimentMode'
 
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 const Events = lazy(() => import('./pages/Events'))
@@ -23,61 +24,13 @@ const routes = [
   { path: '/details/line-a', label: 'Объект', title: 'Карточка объекта', icon: Gauge },
 ]
 
-function isBaselineExperiment() {
-  return new URLSearchParams(window.location.search).get('variant') === 'baseline'
-}
-
 function getPath() {
   const path = window.location.pathname
   return path === '/' ? '/dashboard' : path
 }
 
-function BaselineCost() {
-  const checksumRef = useRef<HTMLSpanElement>(null)
-  const rows = Array.from({ length: 160 }, (_, index) => index)
-
-  useEffect(() => {
-    const startedAt = performance.now()
-    let nextChecksum = 0
-
-    while (performance.now() - startedAt < 360) {
-      nextChecksum += Math.sqrt(nextChecksum + 1.37)
-    }
-
-    if (checksumRef.current) {
-      checksumRef.current.textContent = `контрольная сумма основного потока: ${Math.round(nextChecksum)}`
-    }
-
-    import('./baseline/heavyBaseline').then((module) => {
-      const analysisResult = module.runBaselineAnalysis()
-      if (checksumRef.current) {
-        checksumRef.current.textContent += `; дополнительный модуль: ${analysisResult}`
-      }
-    })
-  }, [])
-
-  return (
-    <section className="baseline-cost" aria-label="Исходная экспериментальная нагрузка">
-      <strong>Исходная версия для эксперимента</strong>
-      <span ref={checksumRef}>контрольная сумма основного потока рассчитывается</span>
-      <img
-        alt="Тяжелая исходная схема технологического процесса"
-        height="220"
-        src="/baseline-process-map.svg"
-        width="880"
-      />
-      <div>
-        {rows.map((row) => (
-          <i key={row} style={{ width: `${20 + (row % 18)}px` }} />
-        ))}
-      </div>
-    </section>
-  )
-}
-
 function App() {
   const [path, setPath] = useState(getPath)
-  const baselineExperiment = isBaselineExperiment()
 
   useEffect(() => {
     const onPopState = () => setPath(getPath())
@@ -89,6 +42,8 @@ function App() {
     if (path.startsWith('/details')) return 'Карточка объекта'
     return routes.find((route) => route.path === path)?.title ?? 'Панель мониторинга'
   }, [path])
+
+  const modeLabel = experimentMode === 'baseline' ? 'исходная сборка' : 'пороги соблюдены'
 
   const navigate = (nextPath: string) => {
     window.history.pushState({}, '', nextPath)
@@ -138,13 +93,14 @@ function App() {
             <h1>{title}</h1>
           </div>
           <div className="topbar-actions" aria-label="Текущее состояние контроля">
-            <span className="status-pill good">Пороги соблюдены</span>
+            <span className={experimentMode === 'baseline' ? 'status-pill warning' : 'status-pill good'}>
+              {modeLabel}
+            </span>
             <span className="status-pill neutral"><BarChart3 size={16} aria-hidden="true" /> 5 разделов</span>
           </div>
         </header>
 
         <Suspense fallback={<div className="loading-panel">Загрузка раздела...</div>}>
-          {baselineExperiment && <BaselineCost />}
           {path === '/events' && <Events />}
           {path === '/reports' && <Reports />}
           {path === '/settings' && <SettingsPage />}

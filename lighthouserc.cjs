@@ -10,7 +10,7 @@ module.exports = {
         'http://localhost:4173/settings',
         'http://localhost:4173/details/line-a',
       ],
-      numberOfRuns: 5,
+      numberOfRuns: 9,
       settings: {
         preset: 'desktop',
         budgets: require('./budgets.json'),

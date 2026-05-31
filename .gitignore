@@ -12,9 +12,6 @@ dist
 dist-ssr
 *.local
 .lighthouseci
-reports/lighthouse
-reports/baseline-lighthouse
-reports/strict-lighthouse
 artifacts/
 
 # Editor directories and files

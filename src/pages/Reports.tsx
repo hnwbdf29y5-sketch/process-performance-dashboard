@@ -1,7 +1,12 @@
+import { lazy, Suspense } from 'react'
 import { Download, FileChartColumn } from 'lucide-react'
-import { reports } from '../data/processData'
+import { useTelemetryAnalysis } from '../hooks/useTelemetryAnalysis'
+
+const TelemetryInsights = lazy(() => import('../components/TelemetryInsights'))
 
 function Reports() {
+  const { result, pending } = useTelemetryAnalysis('reports')
+
   return (
     <section className="page-stack">
       <section className="panel">
@@ -15,6 +20,9 @@ function Reports() {
             Экспорт
           </button>
         </div>
+        <Suspense fallback={<div className="inline-loading">Подготовка сводных показателей...</div>}>
+          <TelemetryInsights result={result} />
+        </Suspense>
         <div className="table-wrap">
           <table>
             <thead>
@@ -28,7 +36,7 @@ function Reports() {
               </tr>
             </thead>
             <tbody>
-              {reports.map((report) => (
+              {result.reports.map((report) => (
                 <tr key={report.route}>
                   <td>{report.route}</td>
                   <td>{report.lcp}</td>
@@ -45,7 +53,7 @@ function Reports() {
 
       <section className="panel">
         <div className="panel-heading compact">
-          <h2>Подготовленные материалы</h2>
+          <h2>{pending ? 'Формирование материалов' : 'Подготовленные материалы'}</h2>
           <FileChartColumn size={18} aria-hidden="true" />
         </div>
         <div className="artifact-grid">

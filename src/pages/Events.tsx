@@ -1,5 +1,5 @@
 import { Filter, Search } from 'lucide-react'
-import { events } from '../data/processData'
+import { useTelemetryAnalysis } from '../hooks/useTelemetryAnalysis'
 
 const statusLabels = {
   normal: 'норма',
@@ -8,6 +8,8 @@ const statusLabels = {
 } as const
 
 function Events() {
+  const { result, pending } = useTelemetryAnalysis('events')
+
   return (
     <section className="page-stack">
       <div className="toolbar">
@@ -19,6 +21,7 @@ function Events() {
         <button className="icon-button" type="button" aria-label="Фильтр событий">
           <Filter size={18} aria-hidden="true" />
         </button>
+        <span className="status-pill neutral">{pending ? 'обработка журнала' : `${result.events.length} записей`}</span>
       </div>
       <section className="panel">
         <div className="table-wrap">
@@ -32,7 +35,7 @@ function Events() {
               </tr>
             </thead>
             <tbody>
-              {events.map((event) => (
+              {result.events.map((event) => (
                 <tr key={`${event.time}-${event.source}`}>
                   <td>{event.time}</td>
                   <td>{event.source}</td>

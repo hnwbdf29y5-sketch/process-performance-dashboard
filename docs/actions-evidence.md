@@ -8,7 +8,7 @@
 - Статус: `success`
 - Run ID: `26639355758`
 - Ссылка: https://github.com/hnwbdf29y5-sketch/process-performance-dashboard/actions/runs/26639355758
-- Скриншот: `docs/screenshots/github-actions-performance-ci-strict.jpg`
+- Скриншот: `docs/print-screenshots/screen_07_performance_ci_success.png`
 - Результат: сборка, строгий Lighthouse CI, сводный отчет и проверка performance budget выполнены успешно.
 
 ## Полный эксперимент Performance Experiment
@@ -19,7 +19,7 @@
 - Статус: `success`
 - Run ID: `26639799800`
 - Ссылка: https://github.com/hnwbdf29y5-sketch/process-performance-dashboard/actions/runs/26639799800
-- Скриншот: `docs/screenshots/github-actions-performance-experiment.jpg`
+- Скриншот: `docs/print-screenshots/screen_09_performance_experiment_success.png`
 - Длительность: 10 минут 21 секунда.
 - Artifact: `performance-experiment-reports`
 - Результат: baseline-отчеты, optimized-отчеты, budget-check и сравнение до/после сформированы и загружены как artifact.

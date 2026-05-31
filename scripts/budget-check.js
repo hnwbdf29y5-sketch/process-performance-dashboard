@@ -88,9 +88,9 @@ function makeRows(summary) {
     [row.route, 'LCP', `${Math.round(row.lcp)} мс`, `<= ${timingBudgets['largest-contentful-paint']} мс`, formatStatus(row.lcp, timingBudgets['largest-contentful-paint'], 'max')],
     [row.route, 'TBT', `${Math.round(row.tbt)} мс`, `<= ${timingBudgets['total-blocking-time']} мс`, formatStatus(row.tbt, timingBudgets['total-blocking-time'], 'max')],
     [row.route, 'CLS', row.cls.toFixed(3), `<= ${timingBudgets['cumulative-layout-shift']}`, formatStatus(row.cls, timingBudgets['cumulative-layout-shift'], 'max')],
-    [row.route, 'Script transfer', `${row.scriptSize} KB`, `<= ${sizeBudgets.script} KB`, formatStatus(row.scriptSize, sizeBudgets.script, 'max')],
-    [row.route, 'Image transfer', `${row.imageSize} KB`, `<= ${sizeBudgets.image} KB`, formatStatus(row.imageSize, sizeBudgets.image, 'max')],
-    [row.route, 'Total transfer', `${row.totalSize} KB`, `<= ${sizeBudgets.total} KB`, formatStatus(row.totalSize, sizeBudgets.total, 'max')],
+    [row.route, 'Script transfer', `${row.scriptSize} КБ`, `<= ${sizeBudgets.script} КБ`, formatStatus(row.scriptSize, sizeBudgets.script, 'max')],
+    [row.route, 'Image transfer', `${row.imageSize} КБ`, `<= ${sizeBudgets.image} КБ`, formatStatus(row.imageSize, sizeBudgets.image, 'max')],
+    [row.route, 'Total transfer', `${row.totalSize} КБ`, `<= ${sizeBudgets.total} КБ`, formatStatus(row.totalSize, sizeBudgets.total, 'max')],
     [row.route, 'Total requests', `${row.totalCount}`, `<= ${countBudgets.total}`, formatStatus(row.totalCount, countBudgets.total, 'max')],
   ])
 }
